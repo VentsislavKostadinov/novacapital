@@ -14,8 +14,11 @@ $white-color: #ffffff;
   color: $white-color;
 }
 
+@media (max-width: 991px) {
+  .bg-light { padding-top: 50px}
+}
 
 /* Forms */
  form {
-  margin: auto;
+  padding-top: 120px;
 }

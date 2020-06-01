@@ -98,8 +98,8 @@
 </section>
 
     <section id="loginForm">
-    <form class="col-md-4">
-        <h2>Login</h2>
+    <form class="container col-lg-4 col-sm-8">
+        <h2 class="text-center">Login</h2>
         <div class="form-group">
             <label for="loginEmail">Email address</label>
             <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" required>
@@ -108,14 +108,16 @@
             <label for="loginPassword">Password</label>
             <input type="password" class="form-control" id="loginPassword" required>
         </div>
+        <div class="col text-center">
         <button class="btn btn-primary" id="loginButton">Login</button>
         <p class="error-login" style="color: red"></p>
+        </div>
     </form>
 </section>
 
 <section id="registerForm">
-<form  class="col-md-4">
-    <h2>Register</h2>
+<form  class="container col-lg-4 col-sm-8">
+    <h2 class="text-center">Register</h2>
     <div class="form-group">
         <label for="registerEmail">Email address</label>
         <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp" required>
@@ -129,12 +131,14 @@
         <input type="password" class="form-control" id="repeatPassword" required>
         <p class="error-repeatPassword" style="color: red"></p>
     </div>
+    <div class="col text-center">
     <button class="btn btn-primary" id="registerButton">Register</button>
+    </div>
 </form>
 </section>
 
-<form id="addGuide" class="col-md-4" style="margin: auto">
-    <h2>Create a Guide</h2>
+<form id="addGuide" class="container col-lg-4 col-sm-8">
+    <h2 class="text-center">Create a Guide</h2>
     <div class="form-group">
         <label for="firstNameData"></label>
         <input type="text" class="form-control" id="firstNameData" placeholder="First Name" required/>
@@ -148,9 +152,10 @@
         <label for="insuranceNumberData"></label>
         <input type="number" class="form-control" id="insuranceNumberData" placeholder="Insurance Number" required/>
     </div>
-
+    <div class="col text-center">
     <button class="btn btn-dark">Add</button>
     <p class="error-add-guide" style="color: red"></p>
+    </div>
 </form>
 <br/><br/><br/>
 
