@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-functions.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://nightly.datatables.net/css/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+     Collapse button
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    Collapsible content
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+        Links
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link logged-out"  style="display: none" href="#homeView"  id="homeNav">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link logged-in" style="display: none"  href="#">Create Guide</a>
+            </li>
+            <li class="nav-item  ml-auto">
+                <a class="nav-link logged-out"  style="display: none" href="#loginForm" id="login-userNav">Login</a>
+            </li>
+            <li class="nav-item ml-auto">
+                <a class="nav-link logged-out" style="display: none"  href="#registerForm" id="registerNav">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link logged-in" href="#" style="display: none"  id="logout-user">Sign out</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link logged-in" href="#"  id="userInfo"></a>
+            </li>
+        </ul>
+    </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Nova Capital</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+                <a class="nav-link logged-out"  style="display: none" href="#homeView"  id="homeNav">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link logged-out"  style="display: none" href="#aboutView"  id="aboutNav">About</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link logged-out"  style="display: none" href="#contactsView"  id="contactsNav">Contacts</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link logged-in" style="display: none"  href="#"></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav pull-right">
+            <li class="nav-item active">
+                <a class="nav-link logged-out"  style="display: none" href="#loginForm" id="login-userNav">Login</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link logged-out" style="display: none"  href="#registerForm" id="registerNav">Register</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link logged-in" href="#"  id="userInfo"></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link logged-in" href="#" style="display: none"  id="logout-user">Sign out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<section id="homeView">
+    <h1>Home Page</h1>
+</section>
+
+    <section id="loginForm">
+    <form class="col-md-4">
+        <h2>Login</h2>
+        <div class="form-group">
+            <label for="loginEmail">Email address</label>
+            <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" required>
+        </div>
+        <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" class="form-control" id="loginPassword" required>
+        </div>
+        <button class="btn btn-primary" id="loginButton">Login</button>
+        <p class="error-login" style="color: red"></p>
+    </form>
+</section>
+
+<section id="registerForm">
+<form  class="col-md-4">
+    <h2>Register</h2>
+    <div class="form-group">
+        <label for="registerEmail">Email address</label>
+        <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp" required>
+    </div>
+    <div class="form-group">
+        <label for="registerPassword">Password</label>
+        <input type="password" class="form-control" id="registerPassword" required>
+    </div>
+    <div class="form-group">
+        <label for="repeatPassword">Repeat Password</label>
+        <input type="password" class="form-control" id="repeatPassword" required>
+        <p class="error-repeatPassword" style="color: red"></p>
+    </div>
+    <button class="btn btn-primary" id="registerButton">Register</button>
+</form>
+</section>
+
+<form id="addGuide" class="col-md-4" style="margin: auto">
+    <h2>Create a Guide</h2>
+    <div class="form-group">
+        <label for="firstNameData"></label>
+        <input type="text" class="form-control" id="firstNameData" placeholder="First Name" required/>
+
+    </div>
+    <div class="form-group">
+        <label for="lastNameData"></label>
+        <input type="text" class="form-control" id="lastNameData" placeholder="Last Name" required/>
+    </div>
+    <div class="form-group">
+        <label for="insuranceNumberData"></label>
+        <input type="number" class="form-control" id="insuranceNumberData" placeholder="Insurance Number" required/>
+    </div>
+
+    <button class="btn btn-dark">Add</button>
+    <p class="error-add-guide" style="color: red"></p>
+</form>
+<br/><br/><br/>
+
+<div class="container logged-in">
+    <table class="table table-striped table-bordered ">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Insurance Number</th>
+            <th scope="col">Delete Person</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<!-- Notifications-->
+<div id="success-login"></div>
+<div id="success-register"></div>
+<div id='added-success'></div>
+<div id='delete-success'></div>
+<div id="signOut-success"></div>
+
+<script>
+    // Your web app's Firebase configuration
+    let firebaseConfig = {
+        apiKey: "AIzaSyAgMgn63pLCK2bHUjNtoKxspncZqPwkPAc",
+        authDomain: "test-c05c4.firebaseapp.com",
+        databaseURL: "https://test-c05c4.firebaseio.com",
+        projectId: "test-c05c4",
+        storageBucket: "test-c05c4.appspot.com",
+        messagingSenderId: "613264734465",
+        appId: "1:613264734465:web:9bec88843beebe42b40300"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+<script src="https://nightly.datatables.net/js/dataTables.bootstrap4.js"></script>
+
+<script src="js/index.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+
+</html>

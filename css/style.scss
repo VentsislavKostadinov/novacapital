@@ -1,0 +1,21 @@
+$black-color: #000000;
+$white-color: #ffffff;
+
+/* NAVIGATION */
+.bg-light {
+  background: #AE62CC !important;
+
+  .nav-link {
+    font-size: 20px;
+  }
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+  color: $white-color;
+}
+
+
+/* Forms */
+ form {
+  margin: auto;
+}

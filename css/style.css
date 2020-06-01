@@ -1,0 +1,18 @@
+/* NAVIGATION */
+.bg-light {
+  background: #AE62CC !important;
+}
+.bg-light .nav-link {
+  font-size: 20px;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: #ffffff;
+}
+
+/* Forms */
+form {
+  margin: auto;
+}
+
+/*# sourceMappingURL=style.css.map */
