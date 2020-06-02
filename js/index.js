@@ -3,55 +3,71 @@ const loggedOutLinks = $('.logged-out');
 const loggedInLinks = $('.logged-in');
 const userDetails = $('#userInfo');
 let showTable = $('.table');
-const homeNav = $('#homeNav');
-const homeView = $('#homeView')
-const loginForm = $('#loginForm')
-const registerForm = $('#registerForm')
+const homeView = $('#home');
+const about = $('#about');
+const contacts = $('#contacts');
+const loginForm = $('#login');
+const registerForm = $('#register');
 
+// Routing Navigation menu
+$('section').hide();
+homeView.show();
 
-$('section').hide()
-$(homeView).show()
+$('#brand-home').on('click', function () {
+    homeView.show();
+    about.hide();
+    contacts.hide();
+    loginForm.hide();
+    registerForm.hide();
+})
 
-$(homeNav).on('click', function () {
-   homeView.show();
+$('#homeNav').on('click', function () {
+    homeView.show();
+    about.hide();
+    contacts.hide();
     loginForm.hide()
     registerForm.hide()
 })
 
+$('#aboutNav').on('click', function () {
+    about.show();
+    contacts.hide();
+    homeView.hide();
+    loginForm.hide()
+    registerForm.hide()
+})
+
+$('#contactsNav').on('click', function () {
+    contacts.show();
+    homeView.hide();
+    about.hide();
+    loginForm.hide();
+    registerForm.hide();
+})
+
 $('#login-userNav').on('click', function () {
-    loginForm.show()
+    loginForm.show();
+    contacts.hide();
+    about.hide();
     homeView.hide()
     registerForm.hide()
 })
 
 $('#registerNav').on('click', function () {
-  registerForm.show();
+    registerForm.show();
+    contacts.hide();
     loginForm.hide()
     homeView.hide()
+    about.hide();
 })
 
-
-function setupLogin(user) {
+// login user
+async function setupLogin(user) {
 
     if (user) {
-        // user details info
-    /*    const userDetail = `Welcome, ${user.email}`;
-        userDetails.html(userDetail);
-        // loggedInLinks.each(item => item.css('display : block'));
-        //loggedOutLinks.each(item => item.css('display : none'));
-        loggedInLinks.css('display', 'block')
-        loggedOutLinks.css('display', 'none')
-
-        // show data table
-        showTable.css('visibility', 'visible')
-
-        // toggle UI without routing
-        $('#loginForm').css('display', 'none');
-        $('#registerForm').css('display', 'none');
-        $('#addGuide').css('display', 'block'); */
 
         const userDetail = `Welcome, ${user.email}`;
-        userDetails.html(userDetail);
+        await userDetails.html(userDetail);
 
         loggedOutLinks.hide()
         loggedInLinks.show();
@@ -59,7 +75,7 @@ function setupLogin(user) {
         $('#addGuide').show();
         loginForm.hide();
         registerForm.hide();
-
+        homeView.hide();
 
 
     } else {
@@ -68,33 +84,19 @@ function setupLogin(user) {
         loggedInLinks.hide();
         $('#addGuide').hide()
         showTable.hide()
-
     }
-       /* showTable.css('visibility', 'hidden');
-
-        // loggedInLinks.forEach(item => item.style.display = 'none')
-        // loggedOutLinks.forEach(item => item.style.display = 'block')
-        loggedInLinks.hide()
-        loggedOutLinks.show()
-        //toggle UI without routing
-        $('#loginForm').css('display', 'block');
-        $('#registerForm').css('display', 'block');
-        $('#addGuide').css('display', 'none');
-
-    } */
-
 }
 
 
 // setup guides
-
 let currentId;
-let guideData;
+
 
 async function setupGuides(data) {
 
+    let guideData;
+
     let tableData = $('.table > tbody');
-    //let tableData = document.querySelector('.table > tbody')
 
     if (data.length) {
         let html = '';
@@ -116,29 +118,23 @@ async function setupGuides(data) {
               </tr>
             `;
 
-
             html += guideData;
 
         })
 
-        tableData.html(html);
+        await tableData.html(html);
         $('.table').DataTable()
     }
 
 }
 
-// $(this).closest('tr').remove();
-
-
-function onDelete() {
+async function onDelete() {
 
     let deleteSuccess = $('#delete-success');
 
     if (confirm('Do you to delete data')) {
 
         if (currentId) {
-
-            //currentId = e.target.parentElement.dataset.id
 
             db.collection('guides').doc(currentId).delete()
                 .then(() => {

@@ -1,173 +1,173 @@
+// listen for auth status changes
+const successRegister = $('#success-register');
+const successLogin = $('#success-login')
+const errorAddingGuide = $('.error-add-guide');
+const signOutSuccess = $('#signOut-success');
 
+auth.onAuthStateChanged(user => {
 
-    // listen for auth status changes
-    const successRegister = $('#success-register');
-    const successLogin = $('#success-login')
-    const errorAddingGuide = $('.error-add-guide');
-    const signOutSuccess = $('#signOut-success');
+    if (user) {
+        console.log(user);
+        setupLogin(user);
+        //get data
+        db.collection('guides').onSnapshot(snapshot => {
+            //console.log(snapshot.docs);
 
-    auth.onAuthStateChanged(user => {
-
-        if (user) {
-            console.log(user);
+            setupGuides(snapshot.docs)
             setupLogin(user);
-            //get data
-            db.collection('guides').onSnapshot(snapshot => {
-                //console.log(snapshot.docs);
+            $('.table').DataTable()
+        })
+    } else {
+        console.log('User is logged out');
+        setupLogin();
+        setupGuides([])
 
-                setupGuides(snapshot.docs)
-                setupLogin(user);
-                $('.table').DataTable()
-            })
-        } else {
-            console.log('User is logged out');
-            setupLogin();
-            setupGuides([])
-
-        }
-    })
+    }
+})
 
 
-    // Register
-   
-    let registerBtn = $('#registerButton');
+// REGISTER
 
-    registerBtn.on('click', registerUser)
+let registerBtn = $('#registerButton');
 
-    async function registerUser(e) {
+registerBtn.on('click', registerUser)
 
-        e.preventDefault();
-        const email = $('#registerEmail').val();
-        let password = $('#registerPassword').val();
-        let repeatPassword = $('#repeatPassword').val();
-        let errorPasswords = $('.error-repeatPassword');
-        const errorRegister = $('.error-register');
+async function registerUser(e) {
 
-        if (password !== repeatPassword) {
+    e.preventDefault();
+    const email = $('#registerEmail').val();
+    let password = $('#registerPassword').val();
+    let repeatPassword = $('#repeatPassword').val();
+    let errorPasswords = $('.error-repeatPassword');
+    const errorRegister = $('.error-register');
 
-            //alert('Passwords do not match')
-            errorPasswords.html('Passwords do not match!')
-            return;
-        } else {
+    if (password !== repeatPassword) {
 
-            // sign up the user
-            auth.createUserWithEmailAndPassword(email, password).then(res => {
+        //alert('Passwords do not match')
+        errorPasswords.html('Passwords do not match!')
+        return;
+    } else {
 
-                console.log(res)
-                console.log(res.user);
-                successRegister.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px;">Successfully ${email} Register!
+        // sign up the user
+        auth.createUserWithEmailAndPassword(email, password).then(res => {
+
+            console.log(res)
+            console.log(res.user);
+            successRegister.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px;">Successfully ${email} Register!
 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div`);
 
-                $(successRegister).fadeOut(5000)
+            $(successRegister).fadeOut(5000)
 
-                $('#registerForm').trigger('reset');
-                console.log(db.collection('guides').doc(res.user.uid));
-            }).catch(err => {
-                errorRegister.html(err.message)
-            })
-        }
+            $('#register').trigger('reset');
+            console.log(db.collection('guides').doc(res.user.uid));
+        }).catch(err => {
+            errorRegister.html(err.message)
+        })
     }
+}
 
-    // login
-    const loginUser = $('#loginButton');
-    loginUser.on('click', signInUser)
+// LOGIN
+const loginUser = $('#loginButton');
+loginUser.on('click', signInUser)
 
-    async function signInUser(e) {
+async function signInUser(e) {
 
-        e.preventDefault();
+    e.preventDefault();
 
-        // get user info
-        const email = $('#loginEmail').val();
-        const password = $('#loginPassword').val();
-        const errorLogin = $('.error-login');
+    // get user info
+    const email = $('#loginEmail').val();
+    const password = $('#loginPassword').val();
+    const errorLogin = $('.error-login');
 
-        auth.signInWithEmailAndPassword(email, password).then(() => {
-            //console.log(res);
-            // console.log(res.user);
-            successLogin.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px;">Successfully ${email} Login!
+    auth.signInWithEmailAndPassword(email, password).then(() => {
+        //console.log(res);
+        // console.log(res.user);
+        successLogin.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px;">Successfully ${email} Login!
 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>`);
 
-            $(successLogin).fadeOut(5000)
+        $(successLogin).fadeOut(5000)
 
-            $('#loginForm').trigger('reset');
-        }).catch(err => {
-            errorLogin.html(err.message);
-        })
-    }
+        $('#login').trigger('reset');
+    }).catch(err => {
+        errorLogin.html(err.message);
+    })
+}
 
 
-    // logout
-    const logout = $('#logout-user');
-    logout.on('click', signOutUser);
+// LOGOUT
+const logout = $('#logout-user');
+logout.on('click', signOutUser);
 
-   async function signOutUser(e) {
+async function signOutUser(e) {
 
-        e.preventDefault();
+    e.preventDefault();
 
-        auth.signOut().then(() => {
+    auth.signOut().then(() => {
 
-            signOutSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px; animation: fadeOut 1s">Sign out Successfully!
+        signOutSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px; animation: fadeOut 1s">Sign out Successfully!
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>`);
-           
-            $(signOutSuccess).fadeOut(5000)
 
-        }).catch(err => {
-            signOutSuccess.html(err.message);
-        })
+        $(signOutSuccess).fadeOut(5000);
 
-    }
+        document.location.href = './index.html';
 
-    // Create a new guide
-    const addGuideBtn = $('#addGuide > .btn-dark');
+    }).catch(err => {
+        signOutSuccess.html(err.message);
+    })
 
-    addGuideBtn.on('click', createNewGuide);
+}
 
-    async function createNewGuide(e) {
+// Create a new guide
+const addGuideBtn = $('#addGuide > .btn-dark');
 
-        e.preventDefault();
+addGuideBtn.on('click', createNewGuide);
 
-        let firstNameGuide = $('#firstNameData').val();
-        let lastNameGuide = $('#lastNameData').val();
-        let insuranceNumberGuide = $('#insuranceNumberData').val();
-        let addedSuccess = $('#added-success');
+async function createNewGuide(e) {
+
+    e.preventDefault();
+
+    let firstNameGuide = $('#firstNameData').val();
+    let lastNameGuide = $('#lastNameData').val();
+    let insuranceNumberGuide = $('#insuranceNumberData').val();
+    let addedSuccess = $('#added-success');
 
 
-        if (firstNameGuide !== '' && lastNameGuide !== '' && insuranceNumberGuide !== '') {
+    if (firstNameGuide !== '' && lastNameGuide !== '' && insuranceNumberGuide !== '') {
 
-            db.collection('guides').add({
-                firstNameGuide,
-                lastNameGuide,
-                insuranceNumberGuide,
+        db.collection('guides').add({
+            firstNameGuide,
+            lastNameGuide,
+            insuranceNumberGuide,
 
-            }).then(res => {
-                console.log(res);
+        }).then(res => {
+            console.log(res);
 
-                addedSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px; animation: fadeOut 1s">${firstNameGuide} <br/> ${lastNameGuide} <br/> ${insuranceNumberGuide} <br/> Added Successfully!
+            addedSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px; animation: fadeOut 1s">${firstNameGuide} <br/> ${lastNameGuide} <br/> ${insuranceNumberGuide} <br/> Added Successfully!
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>`);
-                $(addedSuccess).fadeOut(4000)
+            $(addedSuccess).fadeOut(4000)
 
 
-            }).catch(err => {
-                console.log(err.message);
-            })
-        } else {
-            
-            errorAddingGuide.html(`<h4>Values cannot be empties!</h4>`);
-            return;
-        }
+        }).catch(err => {
+            console.log(err.message);
+        })
+    } else {
 
-        $('#addGuide').trigger('reset');
+        errorAddingGuide.html(`<h4>Values cannot be empties!</h4>`);
+        return;
     }
+
+    $('#addGuide').trigger('reset');
+}
 

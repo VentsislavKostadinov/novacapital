@@ -12,16 +12,14 @@
 <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-functions.js"></script>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="css/style.css"/>
 <link href="https://nightly.datatables.net/css/dataTables.bootstrap4.css" rel="stylesheet" type="text/css"/>
-
-
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Nova Capital</a>
+    <a class="navbar-brand logged-out" style="display: none" href="#home" id="brand-home">Nova Capital</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -29,13 +27,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
             <li class="nav-item active">
-                <a class="nav-link logged-out" style="display: none" href="#homeView" id="homeNav">Home</a>
+                <a class="nav-link logged-out" style="display: none" href="#home" id="homeNav">Home</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link logged-out" style="display: none" href="#aboutView" id="aboutNav">About</a>
+                <a class="nav-link logged-out" style="display: none" href="#about" id="aboutNav">About</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link logged-out" style="display: none" href="#contactsView" id="contactsNav">Contacts</a>
+                <a class="nav-link logged-out" style="display: none" href="#contacts" id="contactsNav">Contacts</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link logged-in" style="display: none" href="#"></a>
@@ -43,10 +41,10 @@
         </ul>
         <ul class="navbar-nav pull-right">
             <li class="nav-item active">
-                <a class="nav-link logged-out" style="display: none" href="#loginForm" id="login-userNav">Login</a>
+                <a class="nav-link logged-out" style="display: none" href="#login" id="login-userNav">Login</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link logged-out" style="display: none" href="#registerForm" id="registerNav">Register</a>
+                <a class="nav-link logged-out" style="display: none" href="#register" id="registerNav">Register</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link logged-in" href="#" id="userInfo"></a>
@@ -58,11 +56,13 @@
     </div>
 </nav>
 
-<section id="homeView">
-    <h1>Home Page</h1>
+<section id="home">
+    <img src="images/header-2.jpg" class="img-fluid" alt="header-image">
+    <p id="award-winner">Investment Property Award winner for <strong>2019</strong><span id="arrow"></span></p>
 </section>
 
-<section id="loginForm">
+
+<section id="login" style="display: none">
     <form class="container col-lg-4 col-sm-8">
         <h2 class="text-center">Login</h2>
         <div class="form-group">
@@ -80,7 +80,15 @@
     </form>
 </section>
 
-<section id="registerForm">
+<section id="about">
+    <h1 class="text-center">About page</h1>
+</section>
+
+<section id="contacts">
+    <h1 class="text-center">Contacts page</h1>
+</section>
+
+<section id="register" style="display: none">
     <form class="container col-lg-4 col-sm-8">
         <h2 class="text-center">Register</h2>
         <div class="form-group">
@@ -102,7 +110,7 @@
     </form>
 </section>
 
-<form id="addGuide" class="container col-lg-4 col-sm-8">
+<form id="addGuide" class="container col-lg-4 col-sm-8" style="display: none">
     <h2 class="text-center">Create a Guide</h2>
     <div class="form-group">
         <label for="firstNameData"></label>

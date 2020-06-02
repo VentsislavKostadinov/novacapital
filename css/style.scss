@@ -3,22 +3,138 @@ $white-color: #ffffff;
 
 /* NAVIGATION */
 .bg-light {
-  background: #AE62CC !important;
+  background: #2B383C !important;
+  padding-top: 30px;
+  border-bottom: 4px solid #98AB7A;
+  font-size: 24px;
+  letter-spacing: 1px;
+
+  #brand-home {
+    color: $white-color;
+  }
 
   .nav-link {
     font-size: 20px;
   }
 }
 
-.navbar-light .navbar-nav .active>.nav-link {
+.navbar-light .navbar-nav .active > .nav-link {
   color: $white-color;
 }
 
 @media (max-width: 991px) {
-  .bg-light { padding-top: 30px}
+  .bg-light {
+    padding-top: 30px
+  }
 }
 
 /* Forms */
- form {
+form {
   padding-top: 120px;
+}
+
+/* HOME */
+
+#home {
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  .img-fluid {
+
+    background: no-repeat, center, center;
+    background-size: cover;
+    width: 103%;
+    height: 100%;
+  }
+
+  #award-winner {
+    position: absolute;
+    top: 65px;
+    right: 155px;
+    width: 180px;
+    height: 166px;
+    text-align: center;
+    background: #98AB7A;
+    color: $white-color;
+    border-radius: 6px;
+    font-size: 27px;
+
+  }
+
+  #arrow {
+
+    border-style: solid;
+    border-width: 45px 88px 0 90px;
+    position: absolute;
+    top: 164px;
+    right: 1px;
+    border-color: #98AB7A transparent transparent transparent;
+  }
+}
+
+@media (max-width: 991px) {
+
+  #home {
+
+    #award-winner {
+
+      width: 8.8em;
+      height: 8.84em;
+      font-size: 1em;
+      padding-top: 37px;
+    }
+    #arrow {
+      border-style: solid;
+      border-width: 30px 67px 0 73px;
+      position: absolute;
+      top: 139px;
+      right: 0px;
+      border-color: #98AB7A transparent transparent transparent;
+    }
+  }
+}
+
+@media (max-width: 874px) {
+  #home {
+
+    #award-winner {
+
+      top: 23px;
+      right: 30px;
+    }
+  }
+}
+
+@media (max-width: 632px) {
+  #home {
+
+    #award-winner {
+
+      top: 23px;
+      right: 30px;
+    }
+  }
+}
+
+@media (max-width: 632px) {
+  #home {
+
+    #award-winner {
+
+      top: 23px;
+      right: 30px;
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  #home {
+
+    #award-winner {
+
+      display: none;
+    }
+  }
 }
