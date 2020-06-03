@@ -25,7 +25,6 @@ auth.onAuthStateChanged(user => {
     }
 })
 
-
 // REGISTER
 
 let registerBtn = $('#registerButton');
@@ -127,13 +126,15 @@ async function signOutUser(e) {
 }
 
 // Create a new guide
-const addGuideBtn = $('#addGuide > .btn-dark');
+const addGuideBtn = $('#addGuide button');
+
 
 addGuideBtn.on('click', createNewGuide);
 
 async function createNewGuide(e) {
 
     e.preventDefault();
+    e.stopPropagation();
 
     let firstNameGuide = $('#firstNameData').val();
     let lastNameGuide = $('#lastNameData').val();

@@ -87,16 +87,13 @@ async function setupLogin(user) {
     }
 }
 
-
 // setup guides
+let guideData;
 let currentId;
-
-
 async function setupGuides(data) {
 
-    let guideData;
-
     let tableData = $('.table > tbody');
+    //let tableData = document.querySelector('.table > tbody')
 
     if (data.length) {
         let html = '';
@@ -118,11 +115,12 @@ async function setupGuides(data) {
               </tr>
             `;
 
+
             html += guideData;
 
         })
 
-        await tableData.html(html);
+        tableData.html(html);
         $('.table').DataTable()
     }
 
@@ -135,6 +133,8 @@ async function onDelete() {
     if (confirm('Do you to delete data')) {
 
         if (currentId) {
+
+            //currentId = e.target.parentElement.dataset.id
 
             db.collection('guides').doc(currentId).delete()
                 .then(() => {
