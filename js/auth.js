@@ -117,7 +117,7 @@ async function signOutUser(e) {
 
         $(signOutSuccess).fadeOut(5000);
 
-        document.location.href = './index.html';
+        document.location.href = '/';
 
     }).catch(err => {
         signOutSuccess.html(err.message);
