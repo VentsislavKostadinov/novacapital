@@ -47,6 +47,16 @@ body {
 @media (max-width: 991px) {
   .bg-light {
     padding-top: 30px;
+
+  }
+
+  #homeNav, #login-userNav {
+    border-left: none;
+  }
+
+  .navbar-light .navbar-nav .active > .nav-link {
+
+    border: none;
   }
 }
 
@@ -58,8 +68,6 @@ form {
 /* HOME */
 
 #home {
-  // width: 109%;
-  //height: auto;
 
   h1 {
     position: absolute;
@@ -114,6 +122,7 @@ form {
 
 @media (max-width: 1048px) {
   #home {
+
     h1 {
    
       top: 70%;
@@ -132,11 +141,13 @@ form {
 /* Resonsive Award Winner */
 @media (max-width: 991px) {
   #home {
+
     #award-winner {
       width: 8.8em;
       height: 8.84em;
       font-size: 1em;
       padding-top: 37px;
+      margin-top: 160px;
     }
     #arrow {
       border-style: solid;
@@ -149,6 +160,8 @@ form {
 
     h1 {
   
+      width: 90%;
+      margin-top: 80px;
       font-size: 2.4em;
 
       #header-text {

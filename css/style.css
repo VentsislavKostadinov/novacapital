@@ -40,6 +40,12 @@ body {
   .bg-light {
     padding-top: 30px;
   }
+  #homeNav, #login-userNav {
+    border-left: none;
+  }
+  .navbar-light .navbar-nav .active > .nav-link {
+    border: none;
+  }
 }
 
 /* Forms */
@@ -117,6 +123,7 @@ form {
     height: 8.84em;
     font-size: 1em;
     padding-top: 37px;
+    margin-top: 160px;
   }
   #home #arrow {
     border-style: solid;
@@ -127,6 +134,8 @@ form {
     border-color: #98ab7a transparent transparent transparent;
   }
   #home h1 {
+    width: 90%;
+    margin-top: 80px;
     font-size: 2.4em;
   }
   #home h1 #header-text {
