@@ -1,16 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
+
 $black-color: #000000;
 $white-color: #ffffff;
+$white-green: #98ab7a;
+
+body {
+  font-family: Lato, sans-serif;
+}
 
 /* NAVIGATION */
 .bg-light {
-  background: #2B383C !important;
+  background: #2b383c !important;
   padding-top: 30px;
-  border-bottom: 4px solid #98AB7A;
+  border-bottom: 4px solid$white-green;
   font-size: 24px;
   letter-spacing: 1px;
 
   #brand-home {
     color: $white-color;
+    border-top: 1px solid $white-green;
+    border-bottom: 1px solid $white-green;
   }
 
   .nav-link {
@@ -20,11 +29,24 @@ $white-color: #ffffff;
 
 .navbar-light .navbar-nav .active > .nav-link {
   color: $white-color;
+  border-right: 2px solid $white-green;
 }
+
+#homeNav, #login-userNav {
+  border-left: 2px solid $white-green;
+}
+
+/* NAVBAR TOGGLER */
+
+.navbar-light .navbar-toggler {
+
+  border-color: $white-color;
+}
+
 
 @media (max-width: 991px) {
   .bg-light {
-    padding-top: 30px
+    padding-top: 30px;
   }
 }
 
@@ -36,50 +58,81 @@ form {
 /* HOME */
 
 #home {
+  // width: 109%;
+  //height: auto;
 
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  h1 {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $white-color;
+    font-size: 80px;
+    letter-spacing: 6px;
+    border: 1px solid $white-color;
+    border-radius: 2px;
+
+    p {
+      color: $white-green;
+    }
+
+    #header-text {
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+  }
 
   .img-fluid {
-
     background: no-repeat, center, center;
     background-size: cover;
-    width: 103%;
-    height: 100%;
+    height: 100vh;
+    width: 102%;
   }
 
   #award-winner {
     position: absolute;
-    top: 65px;
+    top: 150px;
     right: 155px;
     width: 180px;
     height: 166px;
     text-align: center;
-    background: #98AB7A;
+    background: $white-green;
     color: $white-color;
     border-radius: 6px;
     font-size: 27px;
-
   }
 
   #arrow {
-
     border-style: solid;
     border-width: 45px 88px 0 90px;
     position: absolute;
     top: 164px;
     right: 1px;
-    border-color: #98AB7A transparent transparent transparent;
+    border-color: #98ab7a transparent transparent transparent;
   }
 }
 
-@media (max-width: 991px) {
-
+@media (max-width: 1048px) {
   #home {
+    h1 {
+   
+      top: 70%;
+      font-size: 2.4em;
 
+      #header-text {
+      
+        font-size: 0.4em;
+        font-weight: bold;
+       }
+    }
+   
+  }
+}
+
+/* Resonsive Award Winner */
+@media (max-width: 991px) {
+  #home {
     #award-winner {
-
       width: 8.8em;
       height: 8.84em;
       font-size: 1em;
@@ -91,39 +144,36 @@ form {
       position: absolute;
       top: 139px;
       right: 0px;
-      border-color: #98AB7A transparent transparent transparent;
+      border-color: #98ab7a transparent transparent transparent;
     }
+
+    h1 {
+  
+      font-size: 2.4em;
+
+      #header-text {
+
+        font-size: 0.4em;
+       }
+    }
+  
+
   }
 }
 
 @media (max-width: 874px) {
   #home {
-
     #award-winner {
-
-      top: 23px;
+      top: 132px;
       right: 30px;
     }
   }
 }
 
-@media (max-width: 632px) {
+@media (max-width: 694px) {
   #home {
-
     #award-winner {
-
-      top: 23px;
-      right: 30px;
-    }
-  }
-}
-
-@media (max-width: 632px) {
-  #home {
-
-    #award-winner {
-
-      top: 23px;
+      top: 98px;
       right: 30px;
     }
   }
@@ -131,9 +181,7 @@ form {
 
 @media (max-width: 630px) {
   #home {
-
     #award-winner {
-
       display: none;
     }
   }

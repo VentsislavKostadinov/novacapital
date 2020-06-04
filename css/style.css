@@ -1,20 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
+body {
+  font-family: Lato, sans-serif;
+}
+
 /* NAVIGATION */
 .bg-light {
-  background: #2B383C !important;
+  background: #2b383c !important;
   padding-top: 30px;
-  border-bottom: 4px solid #98AB7A;
+  border-bottom: 4px solid #98ab7a;
   font-size: 24px;
   letter-spacing: 1px;
 }
+
 .bg-light #brand-home {
   color: #ffffff;
+  border-top: 1px solid #98ab7a;
+  border-bottom: 1px solid #98ab7a;
 }
+
 .bg-light .nav-link {
   font-size: 20px;
 }
 
 .navbar-light .navbar-nav .active > .nav-link {
   color: #ffffff;
+  border-right: 2px solid #98ab7a;
+}
+
+#homeNav, #login-userNav {
+  border-left: 2px solid #98ab7a;
+}
+
+/* NAVBAR TOGGLER */
+.navbar-light .navbar-toggler {
+  border-color: #ffffff;
 }
 
 @media (max-width: 991px) {
@@ -22,44 +41,76 @@
     padding-top: 30px;
   }
 }
+
 /* Forms */
 form {
   padding-top: 120px;
 }
 
 /* HOME */
-#home {
+#home h1 {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  top: 85%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 80px;
+  letter-spacing: 6px;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
 }
+
+#home h1 p {
+  color: #98ab7a;
+}
+
+#home h1 #header-text {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
 #home .img-fluid {
   background: no-repeat, center, center;
   background-size: cover;
-  width: 103%;
-  height: 100%;
+  height: 100vh;
+  width: 102%;
 }
+
 #home #award-winner {
   position: absolute;
-  top: 65px;
+  top: 150px;
   right: 155px;
   width: 180px;
   height: 166px;
   text-align: center;
-  background: #98AB7A;
+  background: #98ab7a;
   color: #ffffff;
   border-radius: 6px;
   font-size: 27px;
 }
+
 #home #arrow {
   border-style: solid;
   border-width: 45px 88px 0 90px;
   position: absolute;
   top: 164px;
   right: 1px;
-  border-color: #98AB7A transparent transparent transparent;
+  border-color: #98ab7a transparent transparent transparent;
 }
 
+@media (max-width: 1048px) {
+  #home h1 {
+    top: 70%;
+    font-size: 2.4em;
+  }
+  #home h1 #header-text {
+    font-size: 0.4em;
+    font-weight: bold;
+  }
+}
+
+/* Resonsive Award Winner */
 @media (max-width: 991px) {
   #home #award-winner {
     width: 8.8em;
@@ -73,31 +124,33 @@ form {
     position: absolute;
     top: 139px;
     right: 0px;
-    border-color: #98AB7A transparent transparent transparent;
+    border-color: #98ab7a transparent transparent transparent;
+  }
+  #home h1 {
+    font-size: 2.4em;
+  }
+  #home h1 #header-text {
+    font-size: 0.4em;
   }
 }
+
 @media (max-width: 874px) {
   #home #award-winner {
-    top: 23px;
+    top: 132px;
     right: 30px;
   }
 }
-@media (max-width: 632px) {
+
+@media (max-width: 694px) {
   #home #award-winner {
-    top: 23px;
+    top: 98px;
     right: 30px;
   }
 }
-@media (max-width: 632px) {
-  #home #award-winner {
-    top: 23px;
-    right: 30px;
-  }
-}
+
 @media (max-width: 630px) {
   #home #award-winner {
     display: none;
   }
 }
-
 /*# sourceMappingURL=style.css.map */
