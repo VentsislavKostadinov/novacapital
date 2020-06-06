@@ -313,6 +313,33 @@ form {
         h3 {
           font-size: 2em;
         }
+        p {
+            font-size: 0.7em;
+        }
+        h4 {
+          font-size: 0.7em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  #welcome-nova-capital {
+    #nova-article {
+      article {
+        h2 {
+          font-size: 1.5em;
+        }
+        h3 {
+          font-size: 1.5em;
+        }
+        p {
+            font-size: 0.5em;
+        }
+        h4 {
+          font-size: 0.5em;
+        }
       }
     }
   }

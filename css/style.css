@@ -257,6 +257,27 @@ form {
   #welcome-nova-capital #nova-article article h3 {
     font-size: 2em;
   }
+  #welcome-nova-capital #nova-article article p {
+    font-size: 0.7em;
+  }
+  #welcome-nova-capital #nova-article article h4 {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 700px) {
+  #welcome-nova-capital #nova-article article h2 {
+    font-size: 1.5em;
+  }
+  #welcome-nova-capital #nova-article article h3 {
+    font-size: 1.5em;
+  }
+  #welcome-nova-capital #nova-article article p {
+    font-size: 0.5em;
+  }
+  #welcome-nova-capital #nova-article article h4 {
+    font-size: 0.5em;
+  }
 }
 
 /* KITCHEN ARTICLE */
