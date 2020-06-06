@@ -274,9 +274,11 @@ form {
   }
   #welcome-nova-capital #nova-article article p {
     font-size: 0.5em;
+    width: inherit;
   }
   #welcome-nova-capital #nova-article article h4 {
     font-size: 0.5em;
+    width: inherit;
   }
 }
 
@@ -290,7 +292,7 @@ form {
   position: absolute;
   z-index: 999;
   width: 600px;
-  margin-left: 75px;
+  margin-left: 125px;
 }
 
 #kitchen-article article h2 {
