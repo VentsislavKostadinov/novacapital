@@ -8,33 +8,48 @@ const about = $('#about');
 const contacts = $('#contacts');
 const loginForm = $('#login');
 const registerForm = $('#register');
+const novaCapitalSection = $('#welcome-nova-capital');
+const locationSection = $('#location');
+
 
 // Routing Navigation menu
 $('section').hide();
 homeView.show();
+novaCapitalSection.show();
+locationSection.show();
+
 
 $('#brand-home').on('click', function () {
     homeView.show();
+    novaCapitalSection.show();
+    locationSection.show();
     about.hide();
     contacts.hide();
     loginForm.hide();
     registerForm.hide();
+
 })
 
 $('#homeNav').on('click', function () {
     homeView.show();
+    novaCapitalSection.show();
+    locationSection.show();
     about.hide();
     contacts.hide();
     loginForm.hide()
-    registerForm.hide()
+    registerForm.hide();
+   
 })
 
 $('#aboutNav').on('click', function () {
     about.show();
     contacts.hide();
     homeView.hide();
-    loginForm.hide()
-    registerForm.hide()
+    loginForm.hide();
+    registerForm.hide();
+    novaCapitalSection.hide();
+    locationSection.hide();
+  
 })
 
 $('#contactsNav').on('click', function () {
@@ -43,6 +58,9 @@ $('#contactsNav').on('click', function () {
     about.hide();
     loginForm.hide();
     registerForm.hide();
+    novaCapitalSection.hide();
+    locationSection.hide();
+ 
 })
 
 $('#login-userNav').on('click', function () {
@@ -51,6 +69,8 @@ $('#login-userNav').on('click', function () {
     about.hide();
     homeView.hide()
     registerForm.hide()
+    novaCapitalSection.hide();
+    locationSection.hide();
 })
 
 $('#registerNav').on('click', function () {
@@ -59,6 +79,8 @@ $('#registerNav').on('click', function () {
     loginForm.hide()
     homeView.hide()
     about.hide();
+    novaCapitalSection.hide();
+    locationSection.hide();
 })
 
 // login user

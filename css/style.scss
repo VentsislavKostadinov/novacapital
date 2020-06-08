@@ -7,10 +7,10 @@ $smoke-white: #d9d7e5;
 
 @mixin article-novaSection() {
   background-color: #36393d;
-      vertical-align: middle;
-      margin-top: 100px;
-      text-align: center;
-      height: 80vh;
+  vertical-align: middle;
+  margin-top: 100px;
+  text-align: center;
+  height: 80vh;
 }
 
 @mixin h2-novaSection() {
@@ -44,7 +44,7 @@ $smoke-white: #d9d7e5;
   opacity: 1;
   -ms-transform: scale(1.1); /* IE 9 */
   -webkit-transform: scale(1.1); /* Safari 3-8 */
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 body {
@@ -119,6 +119,7 @@ form {
     letter-spacing: 6px;
     border: 1px solid $white-color;
     border-radius: 2px;
+    z-index: 999;
 
     p {
       color: $white-green;
@@ -255,17 +256,18 @@ form {
       width: 105%;
       height: 100vh;
       opacity: 0.7;
-      transition: transform .2s;
+      transition: transform 0.2s;
 
       &:hover {
-      @include novaImagesHover();
+        @include novaImagesHover();
       }
     }
 
     article {
-     @include article-novaSection();
+      @include article-novaSection();
 
-      h2 {   @include h2-novaSection();
+      h2 {
+        @include h2-novaSection();
         u {
           @include underlineH2();
         }
@@ -322,12 +324,12 @@ form {
           font-size: 2em;
         }
         p {
-            font-size: 0.7em;
-           // width: auto;
+          font-size: 0.7em;
+          // width: auto;
         }
         h4 {
           font-size: 0.7em;
-         // width: auto;
+          // width: auto;
         }
       }
     }
@@ -345,8 +347,8 @@ form {
           font-size: 1.5em;
         }
         p {
-            font-size: 0.5em;
-            width: inherit;
+          font-size: 0.5em;
+          width: inherit;
         }
         h4 {
           font-size: 0.5em;
@@ -376,11 +378,11 @@ form {
     }
 
     h3 {
-    @include h3-novaSection();
+      @include h3-novaSection();
     }
 
     p {
-  @include p-novaSection();
+      @include p-novaSection();
     }
   }
 
@@ -390,7 +392,7 @@ form {
     width: 105%;
     height: 100vh;
     opacity: 0.7;
-    transition: transform .2s;
+    transition: transform 0.2s;
 
     &:hover {
       @include novaImagesHover();
@@ -468,6 +470,59 @@ form {
     #kitchen-article {
       article {
         display: none;
+      }
+    }
+  }
+}
+
+/* LOCATION */
+
+#location {
+  background-color: #27282b;
+
+  h1 {
+    color: $smoke-white;
+    letter-spacing: 2px;
+  }
+
+  article {
+    text-align: center;
+    color: $white-green;
+    font-size: 30px;
+
+    ul {
+      li {
+        text-decoration: none;
+        list-style-type: none;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  #location {
+    iframe {
+      width: 90%;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  #location {
+    h1 {
+      font-size: 1em;
+    }
+
+    article ul {
+
+      margin-top: 23px;
+
+      li {
+        padding: 0;
+        font-size: 0.8em;
       }
     }
   }

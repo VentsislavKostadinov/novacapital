@@ -64,19 +64,19 @@
                     <p id='header-text'>AN EXCEPTIONAL DEVELOPMENT OF CONTEMPORARY HOMES LOCATED WITHIN
                         THE DESIRABLE LOCATION OF CENTRAL BIRMINGHAM.</p>
                 </h1>
-                <img src="images/header.jpg" class="img-fluid" alt="header-image">
+                <img class="img-fluid" id="header-img-parallax" src="./images/header.jpg" alt="header-image" />
                 <p id="award-winner">Investment Property Award winner for <strong>2019</strong><span id="arrow"></span>
                 </p>
             </div>
         </div>
     </section>
 
-    <div id="welcome-nova-capital">
+    <section id="welcome-nova-capital">
         <div class="container-fluid" id='nova-article'>
             <h1>Discover your new home</h1>
             <div class="row">
                 <div class="col-lg-6 col-md-12">
-                    <img class="img-fluid" src="./images/nova-capital.jpg" alt="nova-capital" />
+                    <img class="img-fluid" id="nova-img-parallax" src="./images/nova-capital.jpg" alt="nova-capital" />
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <article>
@@ -90,25 +90,49 @@
                 </div>
             </div>
         </div>
-
         <!-- Kitchen Section -->
-
         <div class="container-fluid" id='kitchen-article'>
-           <div class="row">
-            <div class="col-lg-6 col-md-12">
-                <article>
-                    <h2><u>DESIGNED TO<br/> MAXIMUM IMPACT</u></h2>
-                    <h3>Learn more about Make Architects’ exquisitely designed new build homes</h3>
-                     <p>The Nova offers a variety of luxury Canary Wharf apartments from studios to Penthouses. Find out more about our apartment specifications</p>
-                 </article>
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <article>
+                        <h2><u>DESIGNED TO<br /> MAXIMUM IMPACT</u></h2>
+                        <h3>Learn more about Make Architects’ exquisitely designed new build homes</h3>
+                        <p>The Nova offers a variety of luxury Canary Wharf apartments from studios to Penthouses. Find
+                            out more about our apartment specifications</p>
+                    </article>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <img class="img-fluid" id="kitchen-img-parallax" src="./images/kitchen.jpg" alt="nova-capital-2" />
+                </div>
             </div>
-            <div class="col-lg-6 col-md-12">
-                <img class="img-fluid" src="./images/kitchen.jpg" alt="nova-capital-2"/>
-            </div>
-           </div>
         </div>
-    </div>
+    </section>
 
+    <!--GOOGLE MAPS LOCATION-->
+    <section id="location">
+        <div class="container-fluid">
+            <h1 class="h1 text-center">OUR LOCATION</h1><br /><br />
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9933.702779668563!2d-0.0197601!3d51.5054057!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8816199b3209b78f!2sCanary%20Wharf%20Shopping%20Centre!5e0!3m2!1sbg!2sbg!4v1591620399611!5m2!1sbg!2sbg"
+                        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <article>
+                        <ul>
+                            <li>1 Canada Square</li>
+                            <li> Canary Wharf</li>
+                            <li>London </li>
+                            <li>E14 5NY</li>
+                            <li>United Kingdom</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="login" style="display: none">
         <form class="container col-lg-4 col-sm-8">
@@ -229,9 +253,19 @@
 
     <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
     <script src="https://nightly.datatables.net/js/dataTables.bootstrap4.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.4.1/dist/simpleParallax.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/auth.js"></script>
+
+    <script>
+
+        // simpleparallax.js
+        const images = $('.img-fluid');
+        new simpleParallax(images[0], { scale: 1.6 });
+        new simpleParallax(images[1], { orientation: 'right' });
+        new simpleParallax(images[2], { orientation: 'left' });
+
+    </script>
 
 </body>
 
