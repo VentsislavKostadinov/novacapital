@@ -10,6 +10,9 @@ const loginForm = $('#login');
 const registerForm = $('#register');
 const novaCapitalSection = $('#welcome-nova-capital');
 const locationSection = $('#location');
+const footer = $('footer');
+
+
 
 
 // Routing Navigation menu
@@ -17,12 +20,14 @@ $('section').hide();
 homeView.show();
 novaCapitalSection.show();
 locationSection.show();
+footer.show();
 
 
 $('#brand-home').on('click', function () {
     homeView.show();
     novaCapitalSection.show();
     locationSection.show();
+    footer.show();
     about.hide();
     contacts.hide();
     loginForm.hide();
@@ -34,47 +39,54 @@ $('#homeNav').on('click', function () {
     homeView.show();
     novaCapitalSection.show();
     locationSection.show();
+    footer.show();
     about.hide();
     contacts.hide();
     loginForm.hide()
     registerForm.hide();
-   
+
 })
 
 $('#aboutNav').on('click', function () {
     about.show();
+    footer.show();
     contacts.hide();
     homeView.hide();
     loginForm.hide();
     registerForm.hide();
     novaCapitalSection.hide();
     locationSection.hide();
-  
+
 })
 
 $('#contactsNav').on('click', function () {
     contacts.show();
+    footer.show();
     homeView.hide();
     about.hide();
     loginForm.hide();
     registerForm.hide();
     novaCapitalSection.hide();
     locationSection.hide();
- 
+
 })
 
 $('#login-userNav').on('click', function () {
+    window.location.hash = "#login";
     loginForm.show();
+    footer.hide();
     contacts.hide();
     about.hide();
     homeView.hide()
     registerForm.hide()
     novaCapitalSection.hide();
     locationSection.hide();
+
 })
 
 $('#registerNav').on('click', function () {
     registerForm.show();
+    footer.hide();
     contacts.hide();
     loginForm.hide()
     homeView.hide()
@@ -87,10 +99,8 @@ $('#registerNav').on('click', function () {
 async function setupLogin(user) {
 
     if (user) {
-
         const userDetail = `Welcome, ${user.email}`;
         await userDetails.html(userDetail);
-
         loggedOutLinks.hide()
         loggedInLinks.show();
         showTable.show();
@@ -98,20 +108,24 @@ async function setupLogin(user) {
         loginForm.hide();
         registerForm.hide();
         homeView.hide();
-
+        novaCapitalSection.hide();
+        locationSection.hide();
+        footer.hide();
+        $('#navbarNav > ul.navbar-nav.mx-auto > li:nth-child(4) > a').css('visibility', 'hidden');
 
     } else {
-
         loggedOutLinks.show()
         loggedInLinks.hide();
         $('#addGuide').hide()
         showTable.hide()
+
     }
 }
 
 // setup guides
 let guideData;
 let currentId;
+
 async function setupGuides(data) {
 
     let tableData = $('.table > tbody');

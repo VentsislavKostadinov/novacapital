@@ -325,11 +325,11 @@ form {
         }
         p {
           font-size: 0.7em;
-          // width: auto;
+         
         }
         h4 {
           font-size: 0.7em;
-          // width: auto;
+          
         }
       }
     }
@@ -479,12 +479,12 @@ form {
 
 #location {
   background-color: #27282b;
+  padding-bottom: 50px;
 
   h1 {
     color: $smoke-white;
     letter-spacing: 2px;
   }
-
   article {
     text-align: center;
     color: $white-green;
@@ -525,5 +525,24 @@ form {
         font-size: 0.8em;
       }
     }
+  }
+}
+
+/* FOOTER */
+
+footer {
+  background-color: $black-color;
+  color: $white-color;
+  padding: 30px;
+
+  h2 {
+  text-align: center;
+    margin: auto;
+  }
+  .fab {
+    margin: auto;
+    font-size: 40px;
+    color: $white-color;
+    padding: 7px;
   }
 }

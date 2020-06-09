@@ -4,6 +4,8 @@ const successLogin = $('#success-login')
 const errorAddingGuide = $('.error-add-guide');
 const signOutSuccess = $('#signOut-success');
 
+
+
 auth.onAuthStateChanged(user => {
 
     if (user) {
