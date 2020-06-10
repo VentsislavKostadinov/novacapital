@@ -11,13 +11,11 @@ body {
   font-size: 24px;
   letter-spacing: 1px;
 }
-
 .bg-light #brand-home {
   color: #ffffff;
   border-top: 1px solid #98ab7a;
   border-bottom: 1px solid #98ab7a;
 }
-
 .bg-light .nav-link {
   font-size: 20px;
 }
@@ -41,15 +39,16 @@ body {
   .bg-light {
     padding-top: 30px;
   }
+
   #homeNav,
-  #login-userNav {
+#login-userNav {
     border-left: none;
   }
+
   .navbar-light .navbar-nav .active > .nav-link {
     border: none;
   }
 }
-
 /* Forms */
 form {
   padding-top: 120px;
@@ -60,8 +59,7 @@ form {
   position: absolute;
   top: 85%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   color: #ffffff;
   font-size: 80px;
   letter-spacing: 6px;
@@ -69,23 +67,19 @@ form {
   border-radius: 2px;
   z-index: 999;
 }
-
 #home h1 p {
   color: #98ab7a;
 }
-
 #home h1 #header-text {
   font-size: 20px;
   letter-spacing: 2px;
 }
-
 #home .img-fluid {
   background: no-repeat, center, center;
   background-size: cover;
   height: 100vh;
   width: 102%;
 }
-
 #home #award-winner {
   position: absolute;
   top: 150px;
@@ -98,7 +92,6 @@ form {
   border-radius: 6px;
   font-size: 27px;
 }
-
 #home #arrow {
   border-style: solid;
   border-width: 45px 88px 0 90px;
@@ -118,7 +111,6 @@ form {
     font-weight: bold;
   }
 }
-
 /* Responsive Award Winner */
 @media (max-width: 991px) {
   #home #award-winner {
@@ -145,34 +137,29 @@ form {
     font-size: 0.4em;
   }
 }
-
 @media (max-width: 874px) {
   #home #award-winner {
     top: 132px;
     right: 30px;
   }
 }
-
 @media (max-width: 694px) {
   #home #award-winner {
     top: 98px;
     right: 30px;
   }
 }
-
 @media (max-width: 630px) {
   #home #award-winner {
     display: none;
   }
 }
-
 /* WELCOME TO NOVA CAPITAL */
 #welcome-nova-capital {
   background-color: #27282b;
   padding-bottom: 45px;
   /* NOVA ARTICLE */
 }
-
 #welcome-nova-capital #nova-article h1 {
   color: #d9d7e5;
   text-transform: uppercase;
@@ -180,7 +167,6 @@ form {
   font-style: italic;
   padding-top: 40px;
 }
-
 #welcome-nova-capital #nova-article .img-fluid {
   padding-top: 80px;
   margin-left: 75px;
@@ -188,7 +174,6 @@ form {
   height: 100vh;
   opacity: 0.7;
 }
-
 #welcome-nova-capital #nova-article article {
   background-color: #36393d;
   vertical-align: middle;
@@ -196,26 +181,22 @@ form {
   text-align: center;
   height: 80vh;
 }
-
 #welcome-nova-capital #nova-article article h2 {
   padding-top: 45px;
   color: #98ab7a;
   font-size: 45px;
   letter-spacing: 2px;
 }
-
 #welcome-nova-capital #nova-article article h2 u {
   text-decoration: none;
   border-bottom: 1px solid #98ab7a;
 }
-
 #welcome-nova-capital #nova-article article h3 {
   font-style: italic;
   color: #d9d7e5;
   font-size: 35px;
   padding-top: 20px;
 }
-
 #welcome-nova-capital #nova-article article p {
   font-size: 16px;
   color: #98ab7a;
@@ -223,7 +204,6 @@ form {
   width: 300px;
   margin: auto;
 }
-
 #welcome-nova-capital #nova-article article h4 {
   font-size: 15px;
   color: #d9d7e5;
@@ -247,7 +227,6 @@ form {
     margin-top: -100px;
   }
 }
-
 @media (max-width: 800px) {
   #welcome-nova-capital #nova-article article h2 {
     font-size: 2em;
@@ -262,7 +241,6 @@ form {
     font-size: 0.7em;
   }
 }
-
 @media (max-width: 700px) {
   #welcome-nova-capital #nova-article article h2 {
     font-size: 1.5em;
@@ -279,7 +257,6 @@ form {
     width: inherit;
   }
 }
-
 /* KITCHEN ARTICLE */
 #kitchen-article article {
   background-color: #36393d;
@@ -292,26 +269,22 @@ form {
   width: 600px;
   margin-left: 125px;
 }
-
 #kitchen-article article h2 {
   padding-top: 45px;
   color: #98ab7a;
   font-size: 45px;
   letter-spacing: 2px;
 }
-
 #kitchen-article article h2 u {
   text-decoration: none;
   border-bottom: 1px solid #98ab7a;
 }
-
 #kitchen-article article h3 {
   font-style: italic;
   color: #d9d7e5;
   font-size: 35px;
   padding-top: 20px;
 }
-
 #kitchen-article article p {
   font-size: 16px;
   color: #98ab7a;
@@ -319,21 +292,17 @@ form {
   width: 300px;
   margin: auto;
 }
-
 #kitchen-article .img-fluid {
   padding-top: 80px;
   margin-left: -75px;
   width: 105%;
   height: 100vh;
   opacity: 0.7;
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
 }
-
 #kitchen-article .img-fluid:hover {
   opacity: 1;
+  -ms-transform: scale(1.1);
   /* IE 9 */
   -webkit-transform: scale(1.1);
   /* Safari 3-8 */
@@ -360,7 +329,6 @@ form {
     margin-left: 0;
   }
 }
-
 @media (max-width: 870px) {
   #welcome-nova-capital #kitchen-article article {
     position: absolute;
@@ -377,7 +345,6 @@ form {
     width: auto;
   }
 }
-
 @media (max-width: 620px) {
   #welcome-nova-capital #kitchen-article article h2 {
     font-size: 0.9em;
@@ -386,30 +353,25 @@ form {
     font-size: 0.9em;
   }
 }
-
 @media (max-width: 570px) {
   #welcome-nova-capital #kitchen-article article {
     display: none;
   }
 }
-
 /* LOCATION */
 #location {
   background-color: #27282b;
   padding-bottom: 50px;
 }
-
 #location h1 {
   color: #d9d7e5;
   letter-spacing: 2px;
 }
-
 #location article {
   text-align: center;
   color: #98ab7a;
   font-size: 30px;
 }
-
 #location article ul li {
   text-decoration: none;
   list-style-type: none;
@@ -423,7 +385,6 @@ form {
     margin: 0 auto;
   }
 }
-
 @media (max-width: 720px) {
   #location h1 {
     font-size: 1em;
@@ -436,46 +397,39 @@ form {
     font-size: 0.8em;
   }
 }
-
 /* DEVELOPMENTS */
 #developments {
   background-color: whitesmoke;
   padding: 50px 0;
 }
-
 #developments h1 {
-  padding-bottom: 30px;
+  padding: 50px 0;
 }
-
 #developments .card-img {
   height: 42vh;
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
 }
-
 #developments .card-img:hover {
   opacity: 1;
+  -ms-transform: scale(1.1);
   /* IE 9 */
   -webkit-transform: scale(1.1);
   /* Safari 3-8 */
   transform: scale(1.1);
 }
-
 #developments ul li {
   font-size: 14px;
   padding-top: 7px;
   list-style-type: none;
 }
-
 #developments .btn-primary {
   background-color: #a99748;
   border: 1px solid #a99748;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
   border-radius: 0;
   letter-spacing: 1px;
 }
-
 #developments .btn-primary:hover {
   background-color: #161b32;
   border: 1px solid #161b32;
@@ -487,12 +441,10 @@ footer {
   color: #ffffff;
   padding: 30px;
 }
-
 footer h2 {
   text-align: center;
   margin: auto;
 }
-
 footer .fab {
   margin: auto;
   font-size: 40px;
@@ -509,4 +461,9 @@ footer .fab {
     padding-top: 10px;
   }
 }
+/*  ABOUT */
+#about h1 {
+  padding-top: 110px;
+}
+
 /*# sourceMappingURL=style.css.map */
