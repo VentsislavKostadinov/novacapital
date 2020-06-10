@@ -5,13 +5,12 @@ const userDetails = $('#userInfo');
 let showTable = $('.table');
 const homeView = $('#home');
 const about = $('#about');
-const contacts = $('#contacts');
+const developments = $('#developments');
 const loginForm = $('#login');
 const registerForm = $('#register');
 const novaCapitalSection = $('#welcome-nova-capital');
 const locationSection = $('#location');
 const footer = $('footer');
-
 
 
 
@@ -29,7 +28,7 @@ $('#brand-home').on('click', function () {
     locationSection.show();
     footer.show();
     about.hide();
-    contacts.hide();
+    developments.hide();
     loginForm.hide();
     registerForm.hide();
 
@@ -41,7 +40,7 @@ $('#homeNav').on('click', function () {
     locationSection.show();
     footer.show();
     about.hide();
-    contacts.hide();
+    developments.hide();
     loginForm.hide()
     registerForm.hide();
 
@@ -50,7 +49,7 @@ $('#homeNav').on('click', function () {
 $('#aboutNav').on('click', function () {
     about.show();
     footer.show();
-    contacts.hide();
+    developments.hide();
     homeView.hide();
     loginForm.hide();
     registerForm.hide();
@@ -59,8 +58,8 @@ $('#aboutNav').on('click', function () {
 
 })
 
-$('#contactsNav').on('click', function () {
-    contacts.show();
+$('#developmentsNav').on('click', function () {
+    developments.show();
     footer.show();
     homeView.hide();
     about.hide();
@@ -72,10 +71,10 @@ $('#contactsNav').on('click', function () {
 })
 
 $('#login-userNav').on('click', function () {
-    window.location.hash = "#login";
+
     loginForm.show();
     footer.hide();
-    contacts.hide();
+    developments.hide();
     about.hide();
     homeView.hide()
     registerForm.hide()
@@ -87,7 +86,7 @@ $('#login-userNav').on('click', function () {
 $('#registerNav').on('click', function () {
     registerForm.show();
     footer.hide();
-    contacts.hide();
+    developments.hide();
     loginForm.hide()
     homeView.hide()
     about.hide();
