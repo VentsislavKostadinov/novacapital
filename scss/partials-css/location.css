@@ -1,0 +1,41 @@
+/* LOCATION */
+#location {
+  background-color: #27282b;
+  padding-bottom: 50px;
+}
+#location h1 {
+  color: #d9d7e5;
+  letter-spacing: 2px;
+}
+#location article {
+  text-align: center;
+  color: #98ab7a;
+  font-size: 30px;
+}
+#location article ul li {
+  text-decoration: none;
+  list-style-type: none;
+  padding: 10px 0;
+}
+
+@media (max-width: 991px) {
+  #location iframe {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 720px) {
+  #location h1 {
+    font-size: 1em;
+  }
+  #location article ul {
+    margin-top: 23px;
+  }
+  #location article ul li {
+    padding: 0;
+    font-size: 0.8em;
+  }
+}
+
+/*# sourceMappingURL=location.css.map */

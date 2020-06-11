@@ -1,0 +1,41 @@
+@mixin article-novaSection() {
+  background-color: #36393d;
+  vertical-align: middle;
+  margin-top: 100px;
+  text-align: center;
+  height: 80vh;
+}
+
+@mixin h2-novaSection() {
+  padding-top: 45px;
+  color: $white-green;
+  font-size: 45px;
+  letter-spacing: 2px;
+}
+
+@mixin underlineH2() {
+  text-decoration: none;
+  border-bottom: 1px solid $white-green;
+}
+
+@mixin h3-novaSection() {
+  font-style: italic;
+  color: $smoke-white;
+  font-size: 35px;
+  padding-top: 20px;
+}
+
+@mixin p-novaSection {
+  font-size: 16px;
+  color: $white-green;
+  padding-top: 15px;
+  width: 300px;
+  margin: auto;
+}
+
+@mixin novaImagesHover() {
+  opacity: 1;
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}

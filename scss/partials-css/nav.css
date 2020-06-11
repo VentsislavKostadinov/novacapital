@@ -1,0 +1,48 @@
+/* NAVIGATION */
+.bg-light {
+  background: #2b383c !important;
+  padding-top: 30px;
+  border-bottom: 4px solid #98ab7a;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+.bg-light #brand-home {
+  color: #ffffff;
+  border-top: 1px solid #98ab7a;
+  border-bottom: 1px solid #98ab7a;
+}
+.bg-light .nav-link {
+  font-size: 20px;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: #ffffff;
+  border-right: 2px solid #98ab7a;
+}
+
+#homeNav,
+#login-userNav {
+  border-left: 2px solid #98ab7a;
+}
+
+/* NAVBAR TOGGLER */
+.navbar-light .navbar-toggler {
+  border-color: #ffffff;
+}
+
+@media (max-width: 991px) {
+  .bg-light {
+    padding-top: 30px;
+  }
+
+  #homeNav,
+#login-userNav {
+    border-left: none;
+  }
+
+  .navbar-light .navbar-nav .active > .nav-link {
+    border: none;
+  }
+}
+
+/*# sourceMappingURL=nav.css.map */

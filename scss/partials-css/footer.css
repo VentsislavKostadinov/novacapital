@@ -1,0 +1,28 @@
+/* FOOTER */
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 30px;
+}
+footer h2 {
+  text-align: center;
+  margin: auto;
+}
+footer .fab {
+  margin: auto;
+  font-size: 40px;
+  color: #ffffff;
+  padding: 7px;
+}
+
+@media (max-width: 991px) {
+  footer h2 {
+    font-size: 1.5em;
+  }
+  footer #icons {
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */

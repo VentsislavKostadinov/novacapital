@@ -1,0 +1,35 @@
+@import "variables";
+@import "mixins";
+
+
+/* FOOTER */
+
+footer {
+  background-color: $black-color;
+  color: $white-color;
+  padding: 30px;
+
+  h2 {
+    text-align: center;
+    margin: auto;
+  }
+  .fab {
+    margin: auto;
+    font-size: 40px;
+    color: $white-color;
+    padding: 7px;
+  }
+}
+
+@media (max-width: 991px) {
+  footer {
+    h2 {
+      font-size: 1.5em;
+    }
+
+    #icons {
+      text-align: center;
+      padding-top: 10px;
+    }
+  }
+}
