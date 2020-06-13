@@ -174,7 +174,7 @@ async function onDelete() {
             db.collection('guides').doc(currentId).delete()
                 .then(() => {
 
-                    deleteSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px; animation: fadeOut 1s">Successfully deleted!
+                    deleteSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 100px; right: 20px; animation: fadeOut 1s">Successfully deleted!
                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>

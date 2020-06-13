@@ -54,7 +54,7 @@ async function registerUser(e) {
 
             console.log(res)
             console.log(res.user);
-            successRegister.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px;">Successfully ${email} Register!
+            successRegister.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 100px; right: 20px;">Successfully ${email} Register!
 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
@@ -86,7 +86,7 @@ async function signInUser(e) {
     auth.signInWithEmailAndPassword(email, password).then(() => {
         //console.log(res);
         // console.log(res.user);
-        successLogin.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px;">Successfully ${email} Login!
+        successLogin.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 100px; right: 20px;">Successfully ${email} Login!
 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
@@ -111,7 +111,7 @@ async function signOutUser(e) {
 
     auth.signOut().then(() => {
 
-        signOutSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px; animation: fadeOut 1s">Sign out Successfully!
+        signOutSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 100px; right: 20px; animation: fadeOut 1s">Sign out Successfully!
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -154,7 +154,7 @@ async function createNewGuide(e) {
         }).then(res => {
             console.log(res);
 
-            addedSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 65px; right: 20px; animation: fadeOut 1s">${firstNameGuide} <br/> ${lastNameGuide} <br/> ${insuranceNumberGuide} <br/> Added Successfully!
+            addedSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 100px; right: 20px; animation: fadeOut 1s">${firstNameGuide} <br/> ${lastNameGuide} <br/> ${insuranceNumberGuide} <br/> Added Successfully!
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
