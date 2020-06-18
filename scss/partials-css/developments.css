@@ -3,37 +3,42 @@
   background-color: whitesmoke;
   padding: 50px 0;
 }
+
 #developments h1 {
   padding: 50px 0;
 }
+
 #developments .card-img {
   height: 42vh;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
+
 #developments .card-img:hover {
   opacity: 1;
-  -ms-transform: scale(1.1);
   /* IE 9 */
   -webkit-transform: scale(1.1);
   /* Safari 3-8 */
   transform: scale(1.1);
 }
+
 #developments ul li {
   font-size: 14px;
   padding-top: 7px;
   list-style-type: none;
 }
+
 #developments .btn-primary {
   background-color: #a99748;
   border: 1px solid #a99748;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
   border-radius: 0;
   letter-spacing: 1px;
 }
+
 #developments .btn-primary:hover {
   background-color: #161b32;
   border: 1px solid #161b32;
 }
-
 /*# sourceMappingURL=developments.css.map */

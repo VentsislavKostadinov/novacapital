@@ -1,1 +1,11 @@
-{"version":3,"sourceRoot":"","sources":["about.scss"],"names":[],"mappings":"AAGA;AAGE;EACE","file":"about.css"}
+{
+    "version": 3,
+    "mappings": "AAGA,YAAY;AAEZ,AAEE,MAFI,CAEJ,EAAE,CAAC;EACF,WAAW,EAAE,KAAK;EACjB,UAAU,EAAE,MAAM;CACnB",
+    "sources": [
+        "about.scss",
+        "variables.scss",
+        "mixins.scss"
+    ],
+    "names": [],
+    "file": "about.css"
+}

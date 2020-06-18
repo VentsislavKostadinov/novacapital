@@ -453,10 +453,36 @@ footer .fab {
 }
 
 /*  ABOUT */
+#about {
+  background-color: #27282b;
+  padding-bottom: 50px;
+}
 #about h1 {
   padding-top: 110px;
+  padding-bottom: 50px;
+  text-align: center;
+  color: #ffffff;
+}
+#about article {
+  text-align: center;
+  margin: auto;
+}
+#about article p {
+  color: #ffffff;
+  font-size: 20px;
 }
 
+@media (max-width: 991px) {
+  #about .img-fluid {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #about article {
+    padding-top: 50px;
+    font-size: 1em;
+  }
+}
 /* Forms */
 form {
   padding-top: 120px;

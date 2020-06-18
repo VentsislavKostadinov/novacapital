@@ -4,10 +4,12 @@ footer {
   color: #ffffff;
   padding: 30px;
 }
+
 footer h2 {
   text-align: center;
   margin: auto;
 }
+
 footer .fab {
   margin: auto;
   font-size: 40px;
@@ -24,5 +26,4 @@ footer .fab {
     padding-top: 10px;
   }
 }
-
 /*# sourceMappingURL=footer.css.map */

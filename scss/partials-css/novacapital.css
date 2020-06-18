@@ -4,6 +4,7 @@
   padding-bottom: 45px;
   /* NOVA ARTICLE */
 }
+
 #welcome-nova-capital #nova-article h1 {
   color: #d9d7e5;
   text-transform: uppercase;
@@ -11,6 +12,7 @@
   font-style: italic;
   padding-top: 40px;
 }
+
 #welcome-nova-capital #nova-article .img-fluid {
   padding-top: 80px;
   margin-left: 75px;
@@ -18,6 +20,7 @@
   height: 100vh;
   opacity: 0.7;
 }
+
 #welcome-nova-capital #nova-article article {
   background-color: #36393d;
   vertical-align: middle;
@@ -25,22 +28,26 @@
   text-align: center;
   height: 80vh;
 }
+
 #welcome-nova-capital #nova-article article h2 {
   padding-top: 45px;
   color: #98ab7a;
   font-size: 45px;
   letter-spacing: 2px;
 }
+
 #welcome-nova-capital #nova-article article h2 u {
   text-decoration: none;
   border-bottom: 1px solid #98ab7a;
 }
+
 #welcome-nova-capital #nova-article article h3 {
   font-style: italic;
   color: #d9d7e5;
   font-size: 35px;
   padding-top: 20px;
 }
+
 #welcome-nova-capital #nova-article article p {
   font-size: 16px;
   color: #98ab7a;
@@ -48,6 +55,7 @@
   width: 300px;
   margin: auto;
 }
+
 #welcome-nova-capital #nova-article article h4 {
   font-size: 15px;
   color: #d9d7e5;
@@ -71,6 +79,7 @@
     margin-top: -100px;
   }
 }
+
 @media (max-width: 800px) {
   #welcome-nova-capital #nova-article article h2 {
     font-size: 2em;
@@ -85,6 +94,7 @@
     font-size: 0.7em;
   }
 }
+
 @media (max-width: 700px) {
   #welcome-nova-capital #nova-article article h2 {
     font-size: 1.5em;
@@ -101,6 +111,7 @@
     width: inherit;
   }
 }
+
 /* KITCHEN ARTICLE */
 #kitchen-article article {
   background-color: #36393d;
@@ -113,22 +124,26 @@
   width: 600px;
   margin-left: 125px;
 }
+
 #kitchen-article article h2 {
   padding-top: 45px;
   color: #98ab7a;
   font-size: 45px;
   letter-spacing: 2px;
 }
+
 #kitchen-article article h2 u {
   text-decoration: none;
   border-bottom: 1px solid #98ab7a;
 }
+
 #kitchen-article article h3 {
   font-style: italic;
   color: #d9d7e5;
   font-size: 35px;
   padding-top: 20px;
 }
+
 #kitchen-article article p {
   font-size: 16px;
   color: #98ab7a;
@@ -136,17 +151,21 @@
   width: 300px;
   margin: auto;
 }
+
 #kitchen-article .img-fluid {
   padding-top: 80px;
   margin-left: -75px;
   width: 105%;
   height: 100vh;
   opacity: 0.7;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
+
 #kitchen-article .img-fluid:hover {
   opacity: 1;
-  -ms-transform: scale(1.1);
   /* IE 9 */
   -webkit-transform: scale(1.1);
   /* Safari 3-8 */
@@ -173,6 +192,7 @@
     margin-left: 0;
   }
 }
+
 @media (max-width: 870px) {
   #welcome-nova-capital #kitchen-article article {
     position: absolute;
@@ -189,6 +209,7 @@
     width: auto;
   }
 }
+
 @media (max-width: 620px) {
   #welcome-nova-capital #kitchen-article article h2 {
     font-size: 0.9em;
@@ -197,10 +218,10 @@
     font-size: 0.9em;
   }
 }
+
 @media (max-width: 570px) {
   #welcome-nova-capital #kitchen-article article {
     display: none;
   }
 }
-
 /*# sourceMappingURL=novacapital.css.map */

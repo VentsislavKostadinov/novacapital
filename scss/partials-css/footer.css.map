@@ -1,1 +1,11 @@
-{"version":3,"sourceRoot":"","sources":["footer.scss","variables.scss"],"names":[],"mappings":"AAIA;AAEA;EACE,kBCPY;EDQZ,OCPY;EDQZ;;AAEA;EACE;EACA;;AAEF;EACE;EACA;EACA,OCjBU;EDkBV;;;AAIJ;EAEI;IACE;;EAGF;IACE;IACA","file":"footer.css"}
+{
+    "version": 3,
+    "mappings": "AAIA,YAAY;AAEZ,AAAA,MAAM,CAAC;EACL,gBAAgB,ECPJ,OAAO;EDQnB,KAAK,ECPO,OAAO;EDQnB,OAAO,EAAE,IAAI;CAYd;;AAfD,AAKE,MALI,CAKJ,EAAE,CAAC;EACD,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,IAAI;CACb;;AARH,AASE,MATI,CASJ,IAAI,CAAC;EACH,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,IAAI;EACf,KAAK,ECjBK,OAAO;EDkBjB,OAAO,EAAE,GAAG;CACb;;AAGH,MAAM,EAAE,SAAS,EAAE,KAAK;EACtB,AACE,MADI,CACJ,EAAE,CAAC;IACD,SAAS,EAAE,KAAK;GACjB;EAHH,AAKE,MALI,CAKJ,MAAM,CAAC;IACL,UAAU,EAAE,MAAM;IAClB,WAAW,EAAE,IAAI;GAClB",
+    "sources": [
+        "footer.scss",
+        "variables.scss",
+        "mixins.scss"
+    ],
+    "names": [],
+    "file": "footer.css"
+}
