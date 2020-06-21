@@ -17,7 +17,7 @@ auth.onAuthStateChanged(user => {
 
             setupGuides(snapshot.docs)
             setupLogin(user);
-            $('.table').DataTable()
+           // $('.table').DataTable()
         })
     } else {
         console.log('User is logged out');

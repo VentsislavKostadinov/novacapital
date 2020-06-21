@@ -131,7 +131,7 @@ async function setupGuides(data) {
     //let tableData = document.querySelector('.table > tbody')
 
     if (data.length) {
-        let html = '';
+        let dataOutput = '';
         let counter = 0;
 
         data.forEach(doc => {
@@ -146,20 +146,29 @@ async function setupGuides(data) {
               <td>${guide.firstNameGuide}</td>
               <td>${guide.lastNameGuide}</td>
               <td>${guide.insuranceNumberGuide}</td>
-              <td><button  class="btn btn-danger" onclick="onDelete()">Delete</button></td>
+              <td><button  class="btn btn-danger" onclick="onDelete(this)">Delete</button></td>
               </tr>
             `;
 
+            dataOutput += guideData;
 
-            html += guideData;
+
+            // Search data in the table
+            $('#searchData').on('keyup', function () {
+
+                let value = $(this).val().toLowerCase();
+                $('.table > tbody tr').filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                })
+            })
 
         })
 
-        tableData.html(html);
-        $('.table').DataTable()
+        tableData.html(dataOutput);
     }
 
 }
+
 
 async function onDelete() {
 
@@ -188,5 +197,5 @@ async function onDelete() {
     } else {
         return;
     }
-} 
+}
 
