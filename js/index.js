@@ -13,7 +13,6 @@ const locationSection = $('#location');
 const footer = $('footer');
 
 
-
 // Routing Navigation menu
 $('section').hide();
 homeView.show();
@@ -122,7 +121,6 @@ async function setupLogin(user) {
 }
 
 // setup guides
-let guideData;
 let currentId;
 
 async function setupGuides(data) {
@@ -137,21 +135,19 @@ async function setupGuides(data) {
         data.forEach(doc => {
 
             let guide = doc.data();
-
             currentId = doc.id; // get id-s from each tr
 
-            guideData = `
+            let guideData = `
               <tr id =${currentId}>
               <td>${counter += 1}</td>
               <td>${guide.firstNameGuide}</td>
               <td>${guide.lastNameGuide}</td>
               <td>${guide.insuranceNumberGuide}</td>
-              <td><button  class="btn btn-danger" onclick="onDelete(this)">Delete</button></td>
+              <td><button class="btn btn-danger">Delete</button></td>
               </tr>
             `;
 
             dataOutput += guideData;
-
 
             // Search data in the table
             $('#searchData').on('keyup', function () {
@@ -160,6 +156,9 @@ async function setupGuides(data) {
                 $('.table > tbody tr').filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 })
+
+                let deleteCurrentId = $('.table tbody tr').closest('.table tbody tr').attr('id');
+
             })
 
         })
@@ -167,28 +166,50 @@ async function setupGuides(data) {
         tableData.html(dataOutput);
     }
 
+    $('.btn-danger').on('click', function () {
+
+        let deleteSuccess = $('#delete-success');
+
+        let deleteCurrentId = $(this).closest('.table tbody tr').attr('id');
+
+        if (confirm('Do you to delete data')) {
+
+            if (deleteCurrentId) {
+
+                db.collection('guides').doc(deleteCurrentId).delete()
+                    .then(() => {
+                        deleteSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 100px; right: 20px; animation: fadeOut 1s">Successfully deleted!
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>`);
+                        $(deleteSuccess).fadeOut(5000)
+
+                    }).catch(err => deleteSuccess.html(err.messsage))
+            }
+        } else {
+            return;
+        }
+    })
 }
 
 
-async function onDelete() {
+/*async function onDelete() {
 
     let deleteSuccess = $('#delete-success');
 
     if (confirm('Do you to delete data')) {
 
         if (currentId) {
-
             //currentId = e.target.parentElement.dataset.id
 
-            db.collection('guides').doc(currentId).delete()
+           db.collection('guides').doc(currentId).delete()
                 .then(() => {
-
                     deleteSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 100px; right: 20px; animation: fadeOut 1s">Successfully deleted!
                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>`);
-
                     $(deleteSuccess).fadeOut(5000)
 
                 }).catch(err => deleteSuccess.html(err.messsage))
@@ -197,5 +218,5 @@ async function onDelete() {
     } else {
         return;
     }
-}
+}*/
 
