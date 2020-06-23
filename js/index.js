@@ -13,14 +13,6 @@ const locationSection = $('#location');
 const footer = $('footer');
 
 
-// Routing Navigation menu
-$('section').hide();
-homeView.show();
-novaCapitalSection.show();
-locationSection.show();
-footer.show();
-
-
 $('#brand-home').on('click', function () {
     homeView.show();
     novaCapitalSection.show();
@@ -111,22 +103,28 @@ async function setupLogin(user) {
         footer.hide();
         $('#navbarNav > ul.navbar-nav.mx-auto > li:nth-child(4) > a').css('visibility', 'hidden');
 
+
     } else {
         loggedOutLinks.show()
         loggedInLinks.hide();
         $('#addGuide').hide()
         showTable.hide()
+        footer.show();
 
     }
 }
 
+// Routing Navigation menu
+ $('section').hide();
+//homeView.show();
+//novaCapitalSection.show();
+//locationSection.show();
+//footer.show();
+
 // setup guides
 let currentId;
-
 async function setupGuides(data) {
-
     let tableData = $('.table > tbody');
-    //let tableData = document.querySelector('.table > tbody')
 
     if (data.length) {
         let dataOutput = '';
@@ -171,7 +169,7 @@ async function setupGuides(data) {
             let deleteSuccess = $('#delete-success');
             let deleteCurrentId = $(this).closest('.table tbody tr').attr('id');
 
-            $('.btn-warning').on('click', function () {
+            $('.btn-warning').on('click', async function () {
 
                 db.collection('guides').doc(deleteCurrentId).delete()
                     .then(() => {
@@ -188,57 +186,4 @@ async function setupGuides(data) {
         })
     }
 }
-
-/*  $('.btn-danger').on('click', function () {
-
-      let deleteSuccess = $('#delete-success');
-
-      let deleteCurrentId = $(this).closest('.table tbody tr').attr('id');
-
-      if(confirm('Do you to delete data')) {
-
-          if (deleteCurrentId) {
-
-              db.collection('guides').doc(deleteCurrentId).delete()
-                  .then(() => {
-                      deleteSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 100px; right: 20px; animation: fadeOut 1s">Successfully deleted!
-             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>`);
-                      $(deleteSuccess).fadeOut(5000)
-
-                  }).catch(err => deleteSuccess.html(err.messsage))
-          }
-      } else {
-          return;
-      }
-  }) */
-
-
-/*async function onDelete() {
-
-    let deleteSuccess = $('#delete-success');
-
-    if (confirm('Do you to delete data')) {
-
-        if (currentId) {
-            //currentId = e.target.parentElement.dataset.id
-
-           db.collection('guides').doc(currentId).delete()
-                .then(() => {
-                    deleteSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 100px; right: 20px; animation: fadeOut 1s">Successfully deleted!
-               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>`);
-                    $(deleteSuccess).fadeOut(5000)
-
-                }).catch(err => deleteSuccess.html(err.messsage))
-        }
-
-    } else {
-        return;
-    }
-}*/
 
