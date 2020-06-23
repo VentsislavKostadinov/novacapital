@@ -1,0 +1,69 @@
+@import "variables";
+
+// SEARCH icon
+
+.has-search {
+
+  .form-control {
+    padding-left: 2.375rem;
+  }
+  .form-control-search {
+
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+  }
+}
+
+// EMAIL icon
+
+.has-email {
+
+  .form-control {
+    padding-left: 2.375rem;
+  }
+  .form-control-feedback-email {
+
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+
+    .fa-envelope {
+      background-color: $black-color;
+    }
+  }
+}
+
+// PASSWORD Icon
+
+.has-password {
+
+  .form-control {
+    padding-left: 2.375rem;
+  }
+  .form-control-feedback-password {
+
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+
+    .fa-key {
+      background-color: $black-color;
+    }
+  }
+}

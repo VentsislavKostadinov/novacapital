@@ -1,0 +1,32 @@
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+.has-search .form-control-feedback-email {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.has-email .form-control {
+  padding-left: 2.375rem;
+}
+.has-email .form-control-feedback-email {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+}
+.has-email .form-control-feedback-email .fa-envelope {
+  background-color: black;
+}
+
+/*# sourceMappingURL=font-awesome-icons.css.map */

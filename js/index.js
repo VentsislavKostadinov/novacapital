@@ -143,7 +143,7 @@ async function setupGuides(data) {
               <td>${guide.firstNameGuide}</td>
               <td>${guide.lastNameGuide}</td>
               <td>${guide.insuranceNumberGuide}</td>
-              <td><button class="btn btn-danger">Delete</button></td>
+              <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirmation">Delete</button></td>
               </tr>
             `;
 
@@ -157,41 +157,63 @@ async function setupGuides(data) {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 })
 
-                let deleteCurrentId = $('.table tbody tr').closest('.table tbody tr').attr('id');
+                //let deleteCurrentId = $('.table tbody tr').closest('.table tbody tr').attr('id');
 
             })
 
         })
 
         tableData.html(dataOutput);
-    }
 
-    $('.btn-danger').on('click', function () {
+        $('.btn-danger').on('click', function () {
 
-        let deleteSuccess = $('#delete-success');
 
-        let deleteCurrentId = $(this).closest('.table tbody tr').attr('id');
+            let deleteSuccess = $('#delete-success');
+            let deleteCurrentId = $(this).closest('.table tbody tr').attr('id');
 
-        if (confirm('Do you to delete data')) {
-
-            if (deleteCurrentId) {
+            $('.btn-warning').on('click', function () {
 
                 db.collection('guides').doc(deleteCurrentId).delete()
                     .then(() => {
-                        deleteSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 100px; right: 20px; animation: fadeOut 1s">Successfully deleted!
+                        deleteSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 150px; right: 20px; animation: fadeOut 1s">Successfully deleted!
                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>`);
-                        $(deleteSuccess).fadeOut(5000)
+                        $('.modal').modal('hide');
+                        $(deleteSuccess).fadeOut(5000);
 
                     }).catch(err => deleteSuccess.html(err.messsage))
-            }
-        } else {
-            return;
-        }
-    })
+            })
+        })
+    }
 }
+
+/*  $('.btn-danger').on('click', function () {
+
+      let deleteSuccess = $('#delete-success');
+
+      let deleteCurrentId = $(this).closest('.table tbody tr').attr('id');
+
+      if(confirm('Do you to delete data')) {
+
+          if (deleteCurrentId) {
+
+              db.collection('guides').doc(deleteCurrentId).delete()
+                  .then(() => {
+                      deleteSuccess.html(`<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: absolute; top: 100px; right: 20px; animation: fadeOut 1s">Successfully deleted!
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>`);
+                      $(deleteSuccess).fadeOut(5000)
+
+                  }).catch(err => deleteSuccess.html(err.messsage))
+          }
+      } else {
+          return;
+      }
+  }) */
 
 
 /*async function onDelete() {
