@@ -1,7 +1,8 @@
 .has-search .form-control {
   padding-left: 2.375rem;
 }
-.has-search .form-control-feedback-email {
+
+.has-search .form-control-search {
   position: absolute;
   z-index: 2;
   display: block;
@@ -15,6 +16,7 @@
 .has-email .form-control {
   padding-left: 2.375rem;
 }
+
 .has-email .form-control-feedback-email {
   position: absolute;
   z-index: 2;
@@ -25,8 +27,27 @@
   text-align: center;
   pointer-events: none;
 }
+
 .has-email .form-control-feedback-email .fa-envelope {
-  background-color: black;
+  background-color: #000000;
 }
 
+.has-password .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-password .form-control-feedback-password {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.has-password .form-control-feedback-password .fa-key {
+  background-color: #000000;
+}
 /*# sourceMappingURL=font-awesome-icons.css.map */

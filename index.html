@@ -64,7 +64,7 @@
                 <p id='header-text'>AN EXCEPTIONAL DEVELOPMENT OF CONTEMPORARY HOMES LOCATED WITHIN
                     THE DESIRABLE LOCATION OF CENTRAL BIRMINGHAM.</p>
             </h1>
-            <img class="img-fluid" id="header-img-parallax" src="./images/header.jpg" alt="header-image"/>
+            <img class="img-fluid" src="./images/header.jpg" alt="header-image"/>
             <p id="award-winner">Investment Property Award winner for <strong>2019</strong><span id="arrow"></span>
             </p>
         </div>
@@ -526,7 +526,7 @@
 <script>
     // simpleparallax.js
     const images = $('.img-fluid');
-    new simpleParallax(images[0], {scale: 1.6});
+    new simpleParallax(images[0], {orientation: 'right'});
     new simpleParallax(images[1], {orientation: 'right'});
     new simpleParallax(images[2], {orientation: 'left'});
 </script>
