@@ -5,7 +5,7 @@ const { SeleniumServer } = require('selenium-webdriver/remote');
 const assert = require('chai').assert;
 
 let driver = require('chromedriver');
-const { get } = require('selenium-webdriver/http');
+//const { get } = require('selenium-webdriver/http');
 
 
 beforeEach(async () => {
@@ -465,15 +465,11 @@ describe('Register user(email), login and successfully sign out', async () => {
         await driver.sleep(2000);
         await driver.findElement(By.css('.table > tbody .btn-danger')).click();
 
-
-
         // confirm delete
-        await driver.sleep(1000);
+        await driver.sleep(2000);
         await driver.findElement(By.css('.modal .btn-warning')).click();
 
         assert.notEqual(tableData.includes(inputLastNameData), false);
-      
-
 
     })
 
