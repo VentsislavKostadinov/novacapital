@@ -86,7 +86,7 @@ describe('Register user(email), login and successfully sign out', async () => {
     let addLastName = 'peshov' + timestampEmail;
     let addInsuranceNumber = timestampEmail;
 
-    it.skip('Register a user and sign out suceessfully', async () => {
+    it.only('Register a user and sign out suceessfully', async () => {
 
         await driver.findElement(By.id('registerNav')).click();
         await driver.findElement(By.id('registerEmail')).sendKeys(emailUser);
@@ -374,7 +374,7 @@ describe('Register user(email), login and successfully sign out', async () => {
 
     })
 
-    it('Delete current row from table data', async () => {
+    it.skip('Delete current row from table data', async () => {
 
         // Login
         await driver.findElement(By.id('login-userNav')).click();
